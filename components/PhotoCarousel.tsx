@@ -5,8 +5,8 @@ import { useState } from "react";
 
 const photos = [
   {
-    src: "/images/poco-x7.jpg",
-    alt: "Dois celulares Poco em uma foto de produto",
+    src: "/images/galaxy-a07.jpg",
+    alt: "Celulares Samsung Galaxy A07 em diferentes cores",
     label: "Celulares para o seu dia a dia",
   },
   {
@@ -15,8 +15,8 @@ const photos = [
     label: "Tecnologia que acompanha você",
   },
   {
-    src: "/images/galaxy-a07.jpg",
-    alt: "Celulares Samsung Galaxy A07 em diferentes cores",
+    src: "/images/poco-x7.jpg",
+    alt: "Dois celulares Poco em uma foto de produto",
     label: "Opções para cada escolha",
   },
   {
@@ -39,7 +39,12 @@ export default function PhotoCarousel() {
   }
 
   return (
-    <div className="carousel" aria-label="Fotos de produtos da Infotech Tapera" role="region" aria-roledescription="carrossel">
+    <div
+      className="carousel"
+      aria-label="Fotos de produtos da Infotech Tapera"
+      role="region"
+      aria-roledescription="carrossel"
+    >
       <div className="carousel-image-wrap">
         <Image
           key={photos[active].src}
@@ -54,15 +59,41 @@ export default function PhotoCarousel() {
         <div className="carousel-gradient" aria-hidden="true" />
         <div className="carousel-bottom">
           <div className="carousel-caption" aria-live="polite">
-            <span>0{active + 1} / 0{photos.length}</span>
+            <span>
+              0{active + 1} / 0{photos.length}
+            </span>
             <strong>{photos[active].label}</strong>
           </div>
           <div className="carousel-arrows">
-            <button type="button" onClick={() => goTo(active - 1)} aria-label="Foto anterior">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14.5 5-7 7 7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <button
+              type="button"
+              onClick={() => goTo(active - 1)}
+              aria-label="Foto anterior"
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="m14.5 5-7 7 7 7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </button>
-            <button type="button" onClick={() => goTo(active + 1)} aria-label="Próxima foto">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9.5 5 7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <button
+              type="button"
+              onClick={() => goTo(active + 1)}
+              aria-label="Próxima foto"
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="m9.5 5 7 7-7 7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </button>
           </div>
         </div>
@@ -79,6 +110,9 @@ export default function PhotoCarousel() {
           />
         ))}
       </div>
+      <p className="carousel-availability">
+        Consulte a disponibilidade dos produtos na loja.
+      </p>
     </div>
   );
 }
