@@ -2,6 +2,8 @@ import Image from "next/image";
 import PhotoCarousel from "@/components/PhotoCarousel";
 
 const whatsapp = "https://wa.me/message/5ZCQAQK7NF6JH1";
+const instagram = "https://www.instagram.com/infotechtapera/";
+const facebook = "https://www.facebook.com/481veiculos/?locale=pt_BR";
 const maps = "https://www.google.com/maps/search/?api=1&query=Rua+Tiradentes%2C+30%2C+Tapera+-+RS%2C+99490-000";
 
 function ArrowIcon() {
@@ -21,6 +23,24 @@ function WhatsAppIcon() {
   );
 }
 
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M14.2 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.5 1.6-1.5h1.7V3.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H8V13h2.8v8h3.4Z" fill="currentColor" />
+    </svg>
+  );
+}
+
 const business = {
   "@context": "https://schema.org",
   "@type": "ElectronicsStore",
@@ -35,7 +55,7 @@ const business = {
     postalCode: "99490-000",
     addressCountry: "BR",
   },
-  sameAs: [whatsapp],
+  sameAs: [instagram, whatsapp],
 };
 
 export default function Home() {
@@ -126,6 +146,32 @@ export default function Home() {
           <div className="container contact-grid">
             <div className="contact-copy"><span className="section-kicker">03 / CONTATO E LOCALIZAÇÃO</span><h2>Estamos perto<br /><em>de você.</em></h2><p>Passe na loja ou fale com a nossa equipe. Conte o que você procura e vamos ajudar com produtos ou assistência técnica.</p><div className="contact-methods"><div><span>VISITE A LOJA</span><address>Rua Tiradentes, 30<br />Tapera - RS · CEP 99490-000</address></div><div><span>FALE COM A GENTE</span><a href="tel:+555433853559">(54) 3385-3559</a></div></div><div className="contact-actions"><a className="button button-dark" href={whatsapp} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> Abrir WhatsApp <ArrowIcon /></a><a className="map-link" href={maps} target="_blank" rel="noopener noreferrer">Como chegar <ArrowIcon /></a></div></div>
             <div className="location-card"><div className="location-grid" aria-hidden="true" /><div className="location-pin" aria-hidden="true"><span /></div><div className="location-label"><span>ENCONTRE A INFOTECH</span><strong>Tapera <i>·</i> RS</strong><p>Rua Tiradentes, 30</p><a href={maps} target="_blank" rel="noopener noreferrer">Ver no mapa <ArrowIcon /></a></div></div>
+          </div>
+        </section>
+
+        <section className="section social-section" id="redes-sociais">
+          <div className="container">
+            <div className="social-heading">
+              <div><span className="section-kicker">04 / REDES SOCIAIS</span><h2>Acompanhe a Infotech<br /><em>de perto.</em></h2></div>
+              <p>Escolha o canal que preferir para acompanhar as novidades ou falar com a nossa equipe.</p>
+            </div>
+            <div className="social-grid">
+              <a className="social-link" href={instagram} target="_blank" rel="noopener noreferrer" aria-label="Acessar o Instagram da Infotech Tapera">
+                <span className="social-icon"><InstagramIcon /></span>
+                <span className="social-text"><strong>Instagram</strong><small>@infotechtapera</small></span>
+                <ArrowIcon />
+              </a>
+              <a className="social-link" href={whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Falar com a Infotech Tapera pelo WhatsApp">
+                <span className="social-icon"><WhatsAppIcon /></span>
+                <span className="social-text"><strong>WhatsApp</strong><small>Fale com a gente</small></span>
+                <ArrowIcon />
+              </a>
+              <a className="social-link" href={facebook} target="_blank" rel="noopener noreferrer" aria-label="Acessar a página no Facebook">
+                <span className="social-icon"><FacebookIcon /></span>
+                <span className="social-text"><strong>Facebook</strong><small>Visite a página</small></span>
+                <ArrowIcon />
+              </a>
+            </div>
           </div>
         </section>
       </main>
